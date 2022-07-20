@@ -4,13 +4,13 @@
     email: 'Il doit s\'agir d\'un e-mail valide.',
     phoneNumber: 'Il doit s\'agir d\'un numéro de téléphone européen.',
     category: 'Veuillez choisir une catégorie s\'il-vous plais.',
-    message: 'Le message ne peut excéder plus de 200 caractères.',
+    message: 'Le message ne peut excéder plus de 200 caractères.'
   }
   const constraintsRegex = {
-    name: /^[a-zA-Z-éèëï]{3,30}$/,          // Acept : Gérémie, Noël, Jean-petit
+    name: /^[a-zA-Z-éèëï]{3,30}$/, // Acept : Gérémie, Noël, Jean-petit
     email: /^[\w.-]+@([\w-]+\.)[\w]{2,3}$/, // Acept : contact.service@domain.com
     phoneNumber: /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/,
-    category: /^[a-z-]+$/                   // Acept : snake-format
+    category: /^[a-z-]+$/ // Acept : snake-format
   }
   // DOM Elements
   const form = document.getElementById('contact-form')
@@ -22,7 +22,7 @@
     if (errors.length) {
       e.stopPropagation()
       e.preventDefault()
-      alert('Le formumaire ne peu être transmis car il contient des erreurs! \n\nVeillez renseigner toutes les information utils, s\'il vous-plais.')
+      window.alert('Le formumaire ne peu être transmis car il contient des erreurs! \n\nVeillez renseigner toutes les information utils, s\'il vous-plais.')
     }
   })
   // Add and shown helper when fields is focus
@@ -44,7 +44,7 @@
       })
       // Remove helper when fields is valid
       input.addEventListener('input', () => {
-        if ('message' === input.name) {
+        if (input.name === 'message') {
           const maxLength = 200
           helper.innerText = !(input.value.length < maxLength) ? constraintsText[input.name] : ''
         } else {
