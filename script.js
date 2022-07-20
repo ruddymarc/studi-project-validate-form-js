@@ -21,10 +21,10 @@
       form.insertBefore(helper, input)
       // Shown helper when form fields is focus
       input.addEventListener('focus', () => {
-        helper.style.display = 'block'
+        helper.classList.add('fade')
       })
       input.addEventListener('blur', () => {
-        helper.style.display = 'none'
+        helper.classList.remove('fade')
       })
     }
   })

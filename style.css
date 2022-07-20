@@ -40,5 +40,11 @@ fieldset {
   border-color: darkseagreen;
 }
 .help-text {
-  display: none;
+  overflow: hidden;  /* Hide the element content, while height = 0 */
+  height: 0;
+  opacity: 0;
+}
+.help-text.fade {
+  height: auto; opacity: 1;
+  transition: height 2ms 4ms, opacity 0ms 6ms;
 }
