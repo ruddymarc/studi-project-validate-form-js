@@ -39,3 +39,6 @@ fieldset {
 .send-button:hover {
   border-color: darkseagreen;
 }
+.help-text {
+  display: none;
+}
