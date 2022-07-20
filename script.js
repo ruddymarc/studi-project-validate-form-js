@@ -15,6 +15,16 @@
   // DOM Elements
   const form = document.getElementById('contact-form')
   const formFields = Array.from(form.elements)
+  // Validate form before submiten
+  form.addEventListener('submit', (e) => {
+    const helper = document.getElementsByClassName('help-text')
+    const errors = Array.from(helper, (help) => { return help.textContent }).filter(content => { return !(content === 'undefined' || content === '' || content === null) })
+    if (errors.length) {
+      e.stopPropagation()
+      e.preventDefault()
+      alert('Le formumaire ne peu être transmis car il contient des erreurs! \n\nVeillez renseigner toutes les information utils, s\'il vous-plais.')
+    }
+  })
   // Add and shown helper when fields is focus
   formFields.forEach(input => {
     // Discart un-tracked inputs
