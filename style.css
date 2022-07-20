@@ -1,0 +1,41 @@
+/* Positioning : Vertical adapt to content */
+#contact-wrapper,
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+button:hover {
+  background: transparent;
+  border: medium solid;
+  cursor: pointer;
+  color: inherit;
+}
+/* Form horizontal */
+form {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+input,
+select,
+textarea,
+fieldset {
+  font-size: 1.1em;
+  border: small solid grey;
+  border-radius: .5em;
+  margin-bottom: .8rem;
+}
+/* Custom send button */
+.send-button {
+  font-size: 1.1em;
+  border-radius: .5em;
+  margin-bottom: .8rem;
+  background-color: darkseagreen;
+  color: azure;
+}
+.send-button:hover {
+  border-color: darkseagreen;
+}
